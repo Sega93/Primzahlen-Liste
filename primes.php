@@ -23,7 +23,7 @@ function primeList($input) {
       echo "Zeile $totalLines: \t";
     }
     if (primeCheck($n)) {
-      printf("%7d", $n);
+      echo "$n\t";
       $totalPrimes ++;
       if ($totalPrimes % 10 == 0) {
         //Zeilenumbruch und Ausgabe neuer Zeilennummer
@@ -36,7 +36,7 @@ function primeList($input) {
       }
     }
   }
-  $totalLines -= 1; // $totalLines -1 um dem Hilfs-Startwert 1 entgegenzuwirken bei der Ausgabe 
+
   // Ausgabefeld
   echo "\n\n";
   echo "Anzahl der Zeilen: $totalLines\n";
