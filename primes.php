@@ -16,11 +16,11 @@ function primeCheck($num) {
 // Erstellfunktion der Tabelle
 function primeList($input) {
   $totalPrimes = 0;
-  $totalLines = 1; // =1 damit Zeile 2 den Wert 2 hat
-  echo "Zeile\n";
+  $totalLines = 1;
+  
   for ($n = 1; $n <= $input; $n++) {
     if ($n == 2) {
-      printf("%5d", 1); //printf um Werte rechtsbündig auszugeben
+      echo "Zeile $totalLines: \t";
     }
     if (primeCheck($n)) {
       printf("%7d", $n);
@@ -28,7 +28,7 @@ function primeList($input) {
       if ($totalPrimes % 10 == 0) {
         //Zeilenumbruch und Ausgabe neuer Zeilennummer
         echo "\n";
-        printf ("%5d", $totalLines);
+        echo "Zeile $totalLines: \t";
       }
       // separater $totalLines +Counter damit erst bei Benutzung einer neuen Zeile der Wert erhöht wird (nicht schon bei 10 wie zB. im Fall $input = 29)
       if ($totalPrimes % 10 == 1) {
