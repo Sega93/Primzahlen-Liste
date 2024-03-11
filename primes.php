@@ -16,13 +16,13 @@ function primeCheck($num) {
 // Erstellfunktion der Tabelle
 function primeList($input) {
   $totalPrimes = 0;
-  $totalLines = 1;
+  $totalLines = 1; // Hilfswert 1 für Zeile "1"
   
   for ($n = 1; $n <= $input; $n++) {
     if ($n == 2) {
       echo "Zeile $totalLines: \t";
     }
-    if (primeCheck($n)) {
+    if (primeCheck($n)) {  // hier vllt noch n switch einbauen mit case primeCheck($n) und case primeCheck($n) && $totalPrimes % 10 == 1, damit Zeilen erst kommen wenn 11 Primes da sind
       echo "$n\t";
       $totalPrimes ++;
       if ($totalPrimes % 10 == 0) {
@@ -36,6 +36,7 @@ function primeList($input) {
       }
     }
   }
+  $totalLines -= 1; // Entgegenwirken zum Hilfswert aus Line 19
 
   // Ausgabefeld
   echo "\n\n";
